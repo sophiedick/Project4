@@ -31,7 +31,8 @@ var gateway = braintree.connect({
   privateKey: "2fe365ec06cdba5e0b5933c5ccb4989a"
 });
 
-mongoose.connect(config.database);
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/thesortclub';
+mongoose.connect(mongoUri);
 
 require('./config/passport')(passport);
 
