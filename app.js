@@ -101,7 +101,7 @@ app.get('/', function(req,res){
   res.render('index.html.ejs')
 })
 
-app.listen(8080);
+app.listen(process.env.PORT || 3000);
 
 
 
