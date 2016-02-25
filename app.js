@@ -18,6 +18,7 @@ var secret         = require('./config/config').secret;
 var nodemailer     = require('nodemailer');
 var sendgrid       = require('sendgrid')('process.env.SENDGRID_USERNAME', '                      process.env.SENDGRID_PASSWORD');
 var flash          = require('connect-flash');
+var ejs            = require('ejs')
  
 // create reusable transporter object using the default SMTP transport 
 var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
@@ -45,6 +46,7 @@ app.get("/client_token", function (req, res) {
 app.use(cookieParser('keyboard cat'));
 app.use(session({ cookie: { maxAge: 60000 }}));
 app.use(flash());
+app.set('view engine', ejs)
 
 app.use(function(req, res, next) {
     res.locals.messages = req.flash();
@@ -95,6 +97,11 @@ app.use(function(req, res, next) {
 
 var routes = require('./config/routes');
 app.use("/api", routes);
+
+
+app.get('/', function(req,res){
+  res.render('index.html.ejs')
+})
 
 app.listen(3000);
 
