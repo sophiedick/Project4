@@ -1,0 +1,102 @@
+<div class="adminpage">
+<h2>Administration Page</h2>
+
+<h3>Bookings to approve</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Service</th>
+      <th>Date and Time</th>
+      <th>Address</th>
+      <th>Accept Booking</th>
+<!--       <th>Save Booking</th> -->
+    </tr>
+  </thead>
+  <tr class="media" ng-repeat="booking in bookings.all| orderBy : 'date' : reverse |filter: {archive: 'false'} | filter: {available: 'false'}">
+    <td>{{ booking.user.local.fullname }}</td>
+    <td>{{ booking.service }}</td>
+    <td>{{ booking.date | date: 'longDate': 'GMT'}} </strong> {{ booking.time }}</td>
+    <td><a href="#" ng-click="bookings.geoCode(booking.address.postcode)">{{ booking.address.line1 }}, 
+    {{ booking.address.town }},
+    {{ booking.address.county }},
+    {{ booking.address.postcode }}</a></td>
+    <td>
+    <form id="approve-booking" ng-submit="bookings.approveBooking(booking)" novalidate>
+    <input type="checkbox" ng-model="booking.available">
+    </form></td>
+  </tr>
+</table>
+
+<br>
+
+<!-- Approved Bookings Section -->
+<div class="media-body">
+  <h3>Upcoming Bookings</h3>
+  <table class="table">
+    <thead>
+      <tr class="bookingTable">
+        <th>Name</th>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Address</th>
+        <th>Archive Booking</th>
+      </tr>
+    </thead>
+    <tr class="media" ng-repeat="booking in bookings.all| orderBy : 'date' : reverse | filter: {archive: 'false'} | filter: {available: 'true'}">
+  <!-- orderby - puts most recent first! -->
+      <td>{{ booking.user.local.fullname }}</td>
+      <td>{{ booking.service }}</td>
+      <td>{{ booking.date | date: 'longDate': 'GMT'}} </strong> {{ booking.time }}</td>
+      <td>{{ booking.address.line1 }} 
+      {{ booking.address.town }}
+      {{ booking.address.county }}
+      {{ booking.address.postcode }}</td>
+      <td>
+      <form ng-submit="bookings.archiveBooking(booking)" novalidate>
+      
+      <button type="submit" ng-model="booking.archive" value="true"class="btn btn-default">Complete</button>
+      </form></td>
+    </tr>      
+  </table>
+</div>
+
+
+<!-- Archived Section -->
+<div>
+  <h3>Archive Bookings</h3>
+  <table class="table">
+    <thead>
+      <tr class="archiveTable">
+        <th>Name</th>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tr class="media" ng-repeat="booking in bookings.all| orderBy : 'date' : reverse |filter: {archive: 'true'} | filter: {available: 'true'}">
+  <!-- orderby - puts most recent first! -->
+      <td>{{ booking.user.local.fullname }}</td>
+      <td>{{ booking.service }}</td>
+      <td>{{ booking.date | date: 'longDate': 'GMT'}} </strong> {{ booking.time }}</td>
+      <td>{{ booking.address.line1 }} 
+      {{ booking.address.town }}
+      {{ booking.address.county }}
+      {{ booking.address.postcode }}</td>
+    </tr>      
+  </table>
+</div>
+
+<!-- DIV FOR GOOGLE MAPS! -->
+
+<ui-gmap-google-map styles='bookings.map.styles' center='bookings.map.center' zoom='bookings.map.zoom'>
+  <ui-gmap-markers models="bookings.randomMarkers" coords="'self'"></ui-gmap-markers>
+</ui-gmap-google-map>
+</div>
+
+
+
+
+
+
+

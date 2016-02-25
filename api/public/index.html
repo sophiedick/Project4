@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="logging">
+<head>
+  <title>The Sort Club</title>
+  <!-- External Files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Internal Files -->
+  <script src="./js/bower_components/lodash/lodash.js"></script>
+  <script src="./js/bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="./js/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/services/tokenService.js"></script>
+  <script src="./js/services/authInterceptor.js"></script>
+  <script src="./js/services/currentUser.js"></script>
+  <script src="./js/services/messages.js"></script>
+  <script src="./js/models/user.js"></script>
+  <script src="./js/models/booking.js"></script>
+  <script src="./js/controllers/usersController.js"></script>
+  <script src="./js/controllers/bookingsController.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/hotel-facilities-1/512/maid2-512.png" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body ng-controller="UsersController as users">
+  <header>
+  <div class="container">
+    <div class="row">
+      <a href="https://twitter.com/sophiedick" target="_blank"><i class="fa fa-twitter socialMedia"></i></a>
+      <a href="https://www.facebook.com/sophie.dick.7" target="_blank"><i class="fa fa-facebook socialMedia"></i></a>
+      <a href="http://instagram.com/sophie_dick" target="_blank"><i class="fa fa-instagram socialMedia"></i></a>
+    </div>
+  </div>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand anchornav" href="#" ui-sref-active="active" ui-sref="home">The Sort Club</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-show="users.checkLoggedIn() && users.admin">
+              <a href="#"ui-sref="admin" class="anchornav">Admin</a>
+            </li>
+            <li ng-show="users.checkLoggedIn() && users.admin">
+              <a href="#" ui-sref="users" class="anchornav">Users</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="bookings" class="anchornav">Bookings</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="addbooking" class="anchornav">Add a booking</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="gallery" class="anchornav">Gallery</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="reviews" class="anchornav">Testimonials</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="login" class="anchornav">Login</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="register" class="anchornav">Register</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#"ui-sref="home" ng-click="users.logout()" class="anchornav">Logout</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+  <main class="container-fluid" ng-controller="BookingsController as bookings" ui-view></main>
+
+  
+</body>
+</html>

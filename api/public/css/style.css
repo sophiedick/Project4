@@ -1,0 +1,314 @@
+.media-object {
+  max-width: 60px;
+}
+
+.sentMessage {
+  display: none;
+}
+
+.deleteMessage {
+  display: none;
+}
+
+.updateMessage {
+  display: none;
+}
+
+.bookingTable {
+  /*display: none;*/
+}
+
+.archiveTable {
+  /*display: none;*/
+}
+
+.navbar-default{
+  background-color: black;
+  /*color: white;*/
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+/*.navbar-default a {
+  color: white
+}
+
+.navbar-brand a {
+  color: white;
+}*/
+
+/*a:hover {
+ background-color: white
+}*/
+
+#bookingFormContainer {
+  width: 80%;
+  margin: 0 auto
+}
+
+.navbar-default .navbar-nav>li>a.anchornav{
+  color: white;
+}
+
+h1 {
+  font-family: 'Old Standard TT', serif;
+  text-align: center
+
+}
+
+.anchornav {
+  font-family: 'Old Standard TT', serif;
+  font-size: 18px;
+}
+
+
+p.intro {
+  font-family: 'Old Standard TT', serif;
+  font-size: 21px;
+  line-height: 28px
+
+}
+
+div.homepage {
+  font-family: 'Old Standard TT', serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+/*div.homepage {
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 3px;
+    float: left;
+    margin-right: 60px;
+}*/
+
+div.adminpage {
+  font-family: 'Old Standard TT', serif;
+  font-size: 17px;
+  line-height: 26px;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom: 30px;
+  
+}
+
+h1#mainTitle {
+  text-transform: uppercase;
+}
+
+div.bookingspage {
+  font-family: 'Old Standard TT', serif;
+  font-size: 17px;
+  line-height: 26px;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom: 30px;
+  
+}
+
+div.homepage h4{
+  font-weight: bold;
+}
+
+div.adminpage h3{
+  font-weight: bold;
+  background-color: #00E676;
+  color:white;
+  padding: 10px;
+  margin:0px;
+}
+
+p.quote{
+  font-family: 'Old Standard TT', serif;
+  font-size: 17px;
+  line-height: 30px;
+  text-align: center;
+
+}
+
+div.servicescontainer {
+  margin: 0 auto;
+
+}
+
+div.serviceTypes {
+  border: 1px solid black;
+  margin: 10px;
+  margin-bottom: 150px;
+}
+
+
+table {
+  
+  background-color: rgba(211, 211, 211, 0.06);
+
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.angular-google-map-container { height: 400px; }
+
+#servicescontainer {
+  text-align: center;
+}
+
+#servicelinks {
+  display: inline-block;
+  margin: 0 auto;
+  font-family: 'Old Standard TT', serif;
+  text-align: center;
+  
+}
+
+.serviceTitles {
+  color: black;
+}
+
+#availableServices {
+  text-align:center; 
+  font-family: 'Old Standard TT', serif;
+  text-decoration: underline;
+
+}
+
+#declutter {
+  display: none;
+  padding:5px;
+  font-family: 'Old Standard TT', serif;
+}
+
+#paperwork {
+  display: none;
+  padding:5px;
+  font-family: 'Old Standard TT', serif;
+}
+
+#wardrobes {
+  display: none;
+  padding:5px;
+  font-family: 'Old Standard TT', serif;
+}
+
+.inline {
+  display: inline-block;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#movinghome {
+  display: none;
+  padding:5px;
+  font-family: 'Old Standard TT', serif;
+}
+
+.photo {
+  width: 250px;
+  height: 250px;
+  padding: 2px;
+  margin: 0px;
+}
+
+#bookingForm input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: rgb(249, 250, 253);
+    background-image: none;
+    border: 0px;
+    border-bottom: 2px dotted rgba(26, 35, 126, 0.26);
+    
+}
+
+img#homepagephoto {
+  width: 100%;
+  float: left;
+}
+
+.socialMedia {
+  /*height: 30px;
+  width: 30px;*/
+  float: right;
+  font-size: 25px;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 240px; 
+    height: 240px; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  bottom: 10px; 
+}
+
+.slidephoto {
+  width: 100%;
+  height: 400px;
+  
+}
+
+hr {
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
+}
+
+.customform {
+  border: none;
+  border-bottom: 2px solid;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.customButton {
+  background-color: black;
+  color:white;
+}
+
+.customButton:hover
+{
+background-color:white;
+color:black;
+}
+
+#serviceblurb {
+  height: 10px;
+  width: 10px;
+
+}
+
+.bookingformclass {
+  font-family: 'Old Standard TT', serif;
+}
+
+

@@ -1,0 +1,48 @@
+<div class="bookingspage">
+<section ng-show="users.checkLoggedIn()">
+  
+  <div id="bookingFormContainer" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Please fill out the booking request</h2>
+        <form id="bookingForm add-booking" ng-submit="bookings.add()" novalidate>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" name="address.line1" class="form-control customform" class="address" placeholder="Line One" ng-model="bookings.booking.address.line1" style="margin-bottom:5px">
+          <input type="text" name="address.town" class="form-control customform"  placeholder="Town" ng-model="bookings.booking.address.town" style="margin-bottom:5px">
+          <input type="text" name="address.county" class="form-control customform"  placeholder="County" ng-model="bookings.booking.address.county" style="margin-bottom:5px">
+          <input type="text" name="address.postcode" class="form-control customform"  placeholder="Postcode" ng-model="bookings.booking.address.postcode" style="margin-bottom:5px;">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service required</label>
+          <select class="form-control" name="service" id="service" ng-model="bookings.booking.service">
+            <option value="Wardrobe Service">Wardrobe Service</option>
+            <option value="Paperwork and Administration">Paperwork and Administration</option>
+            <option value="House move">House move</option>
+          </select>
+        </div>
+
+        <div style="display:inline-block">
+          <div class="form-group" style="display:inline-block">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="date" ng-model="bookings.booking.date">
+          </div>
+
+          <div class="form-group" style="display:inline-block">
+            <label for="time">Time</label>
+            <select class="form-control" name="time" id="time" ng-model="bookings.booking.time">
+              <option value="9am - 12pm">Morning slot: 9am - 12pm</option>
+              <option value="2pm - 5pm">Afternoon slot: 2pm - 5pm</option>
+            </select>
+          </div>
+        </div>
+        
+          <button type="submit" class="btn btn-default customButton">Request Booking</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+

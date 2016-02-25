@@ -1,0 +1,44 @@
+
+<!-- <h3 ng-model="booking.updateMessage">{{bookings.updateMessage}}</h3> -->
+<div class="bookingspage">
+<div ng-show="(!!bookings.flashMessage)">{{bookings.flashMessage}}</div>
+<div class="media-body">
+<div class="container container-table">
+  <div class="row vertical-center-row">
+    <div>
+    <table class="table"> 
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Date</th>
+          <th>Address</th>
+          <th>Cancel Booking</th>
+          <th>Edit Booking</th>
+          <th>Payments</th>
+        </tr>
+      </thead>
+      <tbody class="table-striped">
+        <tr class="media-list" ng-init="bookings.getUserId()">
+        <tr class="media" ng-repeat="booking in bookings.userBookings| orderBy : '_id' : true ">
+
+          <td>{{ booking.service }}</td>
+          <td>{{ booking.date | date: 'longDate': 'GMT'}} {{ booking.time }}</td>
+          <td>{{ booking.address.line1 }}, 
+          {{ booking.address.town }},
+          {{ booking.address.county }},
+          {{ booking.address.postcode }}</td>
+          <td><a href="#" ng-click="bookings.deleteBooking(booking)">Cancel Booking</a></td>
+          <td><a href="#" ui-sref="update" ng-click="bookings.getEditBooking(booking)">Edit Booking</a></td>
+          <td><button><i class="fa fa-cc-amex"></i></button>
+          </tr>
+          </tr>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+</td>
