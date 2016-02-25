@@ -311,4 +311,27 @@ color:black;
   font-family: 'Old Standard TT', serif;
 }
 
+.loginregister {
+  font-family: 'Old Standard TT', serif;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+.loginbtn {
+  width: 100%;
+}
+
+.loginbtn:hover
+{
+background-color:black;
+color:white;
+}
+/*.formlength {
+  width: 50%;
+
+
+}
+*/
 

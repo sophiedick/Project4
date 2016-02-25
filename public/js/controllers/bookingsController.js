@@ -9,18 +9,18 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   console.log("***BOOKING CONTROLLER WORKING***");
 
   // Current user info:
-  console.log(CurrentUser.getUser());
-  self.user   = CurrentUser.getUser();
-  console.log(self.user);
-  self.userId = self.user._doc._id;
+  // console.log(CurrentUser.getUser());
+  // self.user   = CurrentUser.getUser();
+  // console.log(self.user);
+  // self.userId = self.user._doc._id;
 
   self.getUserId = function(){
-    console.log(CurrentUser.getUser()._doc._id)
-    self.user   = CurrentUser.getUser();
-    self.userId = self.user._doc._id;
-    console.log(self.userId);
-    self.getUserBookings();
-    return CurrentUser.getUser()._doc._id;
+    // console.log(CurrentUser.getUser()._doc._id)
+    // self.user   = CurrentUser.getUser();
+    // self.userId = self.user._doc._id;
+    // console.log(self.userId);
+    // self.getUserBookings();
+    // return CurrentUser.getUser()._doc._id;
   }
 
   self.all      = [];
