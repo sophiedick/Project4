@@ -37,7 +37,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   self.updateMessage = "";
   //self.message       = "";
 
-  var styleArray = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+  var styleArray = [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":40}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-10},{"lightness":30}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":10}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":60}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]}];
   
   self.map           = {
                         styles: styleArray,
@@ -236,6 +236,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
     };
 
   self.decluttershow = function(){
+    event.preventDefault();
     $("#movinghome").hide('fast');
     $("#wardrobes").hide('fast');
     $("#paperwork").hide('fast');
@@ -243,6 +244,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   }
 
   self.paperworkshow = function(){
+    event.preventDefault();
     $("#declutter").hide('fast');
     $("#wardrobes").hide('fast');
     $("#movinghome").hide('fast');
@@ -250,6 +252,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   }
 
   self.wardrobesshow = function(){
+    event.preventDefault();
     $("#declutter").hide('fast');
     $("#paperwork").hide('fast');
     $("#movinghome").hide('fast');
@@ -257,6 +260,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   }
 
   self.movinghomeshow = function(){
+    event.preventDefault();
     $("#declutter").hide('fast');
     $("#paperwork").hide('fast');
     $("#wardrobes").hide('fast');
