@@ -1,0 +1,24 @@
+{
+  "name": "email-node",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "sophiedick <sophiefdick@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sophiedick/Project4",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-google-maps": "^2.3.2",
+    "angular": "^1.5.0",
+    "angular-simple-logger": "^0.1.7",
+    "lodash": "^4.5.1"
+  }
+}

@@ -58,6 +58,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   var postcode;
 
   self.geoCode = function(postcode){
+    event.preventDefault();
     var marker2;
     if (marker2) {
     self.randomMarkers.splice(-1, 1)
