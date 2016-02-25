@@ -88,9 +88,7 @@ app.use(function (err, req, res, next) {
 
 app.use(function(req, res, next) {
 
-   global.currentUser = req.user;
-
-
+  global.currentUser = req.user;
   next();
 
 });
@@ -103,7 +101,7 @@ app.get('/', function(req,res){
   res.render('index.html.ejs')
 })
 
-app.listen(3000);
+app.listen(8080);
 
 
 
