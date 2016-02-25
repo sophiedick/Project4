@@ -104,7 +104,7 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
     $timeout(self.hideMessage(), 3000); 
 
     $http
-      .get('http://localhost:3000/api/bookings/user/' + self.userId)
+      .get('/api/bookings/user/' + self.userId)
       .then(function(response){
         console.log(response);
         self.userBookings = response.data;
