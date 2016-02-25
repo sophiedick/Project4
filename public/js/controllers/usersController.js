@@ -16,8 +16,8 @@ function UsersController(User, TokenService, $state, CurrentUser){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.user          = CurrentUser.getUser();
-  // self.admin         = self.user._doc.admin; 
-  // self.admin         = true; 
+  self.admin         = self.user._doc.admin; 
+  self.admin         = null; 
 
   //console.log(self.user);
 

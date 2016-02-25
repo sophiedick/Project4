@@ -29,8 +29,8 @@ function BookingsController($scope, $http, Booking, User, $state, CurrentUser, $
   self.userBookings = [];
   self.approvedBookings = {};
   self.archivedBookings = {};
-  self.flashMessage = FlashMessage.flash();
-  console.log(self.flashMessage);
+  // self.flashMessage = FlashMessage.flash();
+  // console.log(self.flashMessage);
   self.submitMessage  = "Please review the below booking, "
   self.sentMessage    = "Many thanks for your booking. We will be in touch shortly."
   self.deleteMessage    = "Your booking has been deleted!"
